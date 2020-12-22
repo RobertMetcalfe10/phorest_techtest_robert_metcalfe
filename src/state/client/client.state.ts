@@ -35,7 +35,7 @@ const clientSlice = createSlice({
     },
     searchForClient() {},
     searchForClientSuccess(state, action) {
-      state.clients = action.payload?._embedded?.clients;
+      state.clients = action.payload;
     },
     searchForClientFailure(state) {
       state.clients = [];

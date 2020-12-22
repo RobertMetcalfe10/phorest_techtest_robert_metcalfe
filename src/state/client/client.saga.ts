@@ -14,8 +14,11 @@ export interface SearchForClientAction {
 
 function* searchForClient({payload: email}: SearchForClientAction) {
   const {data} = yield call(searchForClientRequest, email);
+  console.log(data);
   if (data?._embedded?.clients) {
-    yield put(ClientState.actions.searchForClientSuccess(data));
+    yield put(
+      ClientState.actions.searchForClientSuccess(data?._embedded?.clients),
+    );
   } else {
     yield put(ClientState.actions.searchForClientFailure());
   }
