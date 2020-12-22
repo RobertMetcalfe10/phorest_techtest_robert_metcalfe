@@ -1,10 +1,8 @@
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import ClientState, {ClientInternalState} from './state/client/client.state';
-import VoucherState, {
-  VoucherInternalState,
-} from './state/voucher/voucher.state';
+import ClientState, {ClientInternalState} from './client/client.state';
+import VoucherState, {VoucherInternalState} from './voucher/voucher.state';
 import rootSaga from './root.saga';
 
 export interface State {
