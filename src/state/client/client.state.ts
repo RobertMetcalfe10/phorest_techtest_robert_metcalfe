@@ -27,7 +27,7 @@ const INITIAL_STATE: ClientInternalState = {
 
 const clientSlice = createSlice({
   name: 'client',
-  initialState: INITIAL_STATE as ClientInternalState,
+  initialState: INITIAL_STATE,
   reducers: {
     setSelectedClient(state, action) {
       state.selectedClientId = action.payload.clientId;

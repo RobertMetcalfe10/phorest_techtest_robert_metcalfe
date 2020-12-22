@@ -17,7 +17,11 @@ export const createRequest = async (axiosRequest: AxiosRequestConfig) => {
     if (axiosRequest.method === 'GET') {
       return await Axios.get(axiosRequest.url, axiosRequest);
     } else if (axiosRequest.method === 'POST') {
-      return await Axios.post(axiosRequest.url, axiosRequest);
+      return await Axios.post(
+        axiosRequest.url,
+        axiosRequest.data,
+        axiosRequest,
+      );
     }
   }
 };

@@ -1,6 +1,6 @@
 import {AxiosRequestConfig} from 'axios';
 
-import {createRequest} from '../../utils/http-client';
+import {createRequest} from './http-client';
 
 export const searchForClientRequest = (email: string) => {
   const request: AxiosRequestConfig = {

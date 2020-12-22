@@ -6,9 +6,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 import * as eva from '@eva-design/eva';
 import {ApplicationProvider} from '@ui-kitten/components';
 
-import store from './src/state/store';
-import {colourPrimary, colourWhite} from './src/utils/constants';
-import ClientScreen from './src/screens/client';
+import store from 'src/state/store';
+import {colourPrimary, colourWhite} from 'src/utils/constants';
+import ClientScreen from 'src/screens/client-screen';
+import VoucherScreen from 'src/screens/voucher-screen';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -30,7 +31,7 @@ const App = () => {
               component={ClientScreen}
             />
             <Stack.Screen
-              name="Voucher"
+              name="VoucherScreen"
               options={{
                 title: 'Create Voucher',
                 headerStyle: {
@@ -38,7 +39,7 @@ const App = () => {
                 },
                 headerTintColor: colourWhite,
               }}
-              component={ClientScreen}
+              component={VoucherScreen}
             />
           </Stack.Navigator>
           <FlashMessage position="top" />
