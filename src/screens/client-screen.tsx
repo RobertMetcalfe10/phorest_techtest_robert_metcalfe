@@ -18,13 +18,13 @@ const renderClientItem = (
   navigation: StackNavigationProp<any>,
   setSelectedClient: (client: Client) => void,
 ) => {
-  const {firstName, lastName, clientId}: Client = item;
+  const {firstName, lastName, email}: Client = item;
 
   return (
     <ListItem
       testID={TEST_IDS.listItem + index}
       title={`${firstName} ${lastName}`}
-      description={`${clientId}`}
+      description={`${email}`}
       accessoryRight={() =>
         renderButtonRight(navigation, setSelectedClient, item)
       }
