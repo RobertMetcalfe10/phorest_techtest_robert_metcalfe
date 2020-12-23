@@ -39,6 +39,7 @@ const VoucherScreen = ({
   return (
     <Card>
       <Input
+        testID={TEST_IDS.input}
         ref={inputRef}
         style={{paddingBottom: 20}}
         keyboardType={'number-pad'}
@@ -48,6 +49,7 @@ const VoucherScreen = ({
         value={amountValue}
       />
       <Button
+        testID={TEST_IDS.button}
         onPress={() => {
           createVoucher();
           // @ts-ignore
@@ -57,6 +59,11 @@ const VoucherScreen = ({
       </Button>
     </Card>
   );
+};
+
+export const TEST_IDS = {
+  input: 'input',
+  button: 'button',
 };
 
 const mapDispatchToProps = {

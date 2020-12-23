@@ -14,7 +14,7 @@ interface Props {
 }
 
 const renderClientItem = (
-  {item}: any,
+  {item, index}: any,
   navigation: StackNavigationProp<any>,
   setSelectedClient: (client: Client) => void,
 ) => {
@@ -22,6 +22,7 @@ const renderClientItem = (
 
   return (
     <ListItem
+      testID={TEST_IDS.listItem + index}
       title={`${firstName} ${lastName}`}
       description={`${clientId}`}
       accessoryRight={() =>
@@ -59,6 +60,7 @@ const ClientScreen = ({
   return (
     <Card>
       <Input
+        testID={TEST_IDS.input}
         style={{paddingBottom: 20}}
         status={inputStatus}
         placeholder="Email"
@@ -73,6 +75,7 @@ const ClientScreen = ({
       />
 
       <List
+        testID={TEST_IDS.list}
         data={
           clients.length === 0
             ? [{title: 'Search for a client by email'}]
@@ -86,6 +89,12 @@ const ClientScreen = ({
       />
     </Card>
   );
+};
+
+export const TEST_IDS = {
+  input: 'input',
+  list: 'list',
+  listItem: 'listItem',
 };
 
 const mapDispatchToProps = {

@@ -42,6 +42,7 @@
     "@types/jest": "^25.2.3",
     "@types/lodash": "^4.14.165",
     "@types/luxon": "^1.25.0",
+    "@types/redux-mock-store": "^1.0.2",
     "@types/react-native": "^0.63.2",
     "@types/react-navigation": "^3.4.0",
     "@types/react-redux": "^7.1.12",
@@ -54,7 +55,7 @@
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
-    "react-native-testing-library": "^6.0.0",
+    "@testing-library/react-native": "^7.1.0",
     "react-test-renderer": "16.13.1",
     "redux-mock-store": "^1.5.4",
     "redux-saga-test-plan": "^4.0.1",
@@ -73,6 +74,9 @@
       "jsx",
       "json",
       "node"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@react-native-community|react-native|@ui-kitten)/)"
     ]
   }
 }
