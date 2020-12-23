@@ -1,9 +1,6 @@
 import Axios, {AxiosRequestConfig} from 'axios';
 
-const BUSINESS_ID = 'eTC3QY5W3p_HmGHezKfxJw';
-const BASE_URL = `http://api-gateway-dev.phorest.com/third-party-api-server/api/business/${BUSINESS_ID}`;
-const USERNAME = 'global/cloud@apiexamples.com';
-const PASSWORD = 'VMlRo/eh+Xd8M~l';
+import {BASE_URL, PASSWORD, USERNAME} from '../utils/constants';
 
 export const createRequest = async (axiosRequest: AxiosRequestConfig) => {
   axiosRequest.auth = {

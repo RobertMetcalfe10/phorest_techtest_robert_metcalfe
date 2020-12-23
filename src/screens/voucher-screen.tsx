@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {connect} from 'react-redux';
 import {Input, Card, Button} from '@ui-kitten/components';
 
-import VoucherState from 'src/state/voucher/voucher.state';
+import VoucherState from '../state/voucher/voucher.state';
 
 interface Props {
   createVoucher: () => void;

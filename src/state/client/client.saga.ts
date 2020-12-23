@@ -1,7 +1,7 @@
 import {takeEvery} from 'redux-saga/effects';
 import {call, put} from 'redux-saga-test-plan/matchers';
 
-import {searchForClientRequest} from 'src/api/client.api';
+import {searchForClientRequest} from '../../api/client.api';
 
 import ClientState from './client.state';
 
@@ -14,7 +14,6 @@ export interface SearchForClientAction {
 
 function* searchForClient({payload: email}: SearchForClientAction) {
   const {data} = yield call(searchForClientRequest, email);
-  console.log(data);
   if (data?._embedded?.clients) {
     yield put(
       ClientState.actions.searchForClientSuccess(data?._embedded?.clients),

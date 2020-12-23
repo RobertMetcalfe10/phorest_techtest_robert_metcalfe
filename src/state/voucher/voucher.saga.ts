@@ -3,12 +3,12 @@ import {call, put, select} from 'redux-saga-test-plan/matchers';
 import {DateTime} from 'luxon';
 import {showMessage} from 'react-native-flash-message';
 
-import {createVoucherRequest} from 'src/api/voucher.api';
+import {createVoucherRequest} from '../../api/voucher.api';
 import {
   Client,
   selectedClientIdSelector,
   selectedClientSelector,
-} from 'src/state/client/client.state';
+} from '../client/client.state';
 
 import VoucherState, {
   balanceSelector,
@@ -32,10 +32,9 @@ function* createVoucher() {
   const {data} = yield call(createVoucherRequest, voucher);
   if (data) {
     yield put(VoucherState.actions.createVoucherSuccess(data));
-    const createdVoucher = yield select(createdVoucherSelector) as Voucher;
     yield call(showMessage, {
       message: 'Voucher created successfully',
-      description: `${selectedClient.firstName} ${selectedClient.lastName}\nBalance: €${createdVoucher.originalBalance}`,
+      description: `${selectedClient.firstName} ${selectedClient.lastName}\nBalance: €${data.originalBalance}`,
       type: 'success',
       duration: 2500,
     });
@@ -44,6 +43,7 @@ function* createVoucher() {
     yield call(showMessage, {
       message: 'Voucher creation failed',
       type: 'danger',
+      duration: 2500,
     });
   }
 }

@@ -1,8 +1,8 @@
 import {expectSaga} from 'redux-saga-test-plan';
 
-import {Client} from 'src/state/client/client.state';
-import {searchForClientRequest} from 'src/api/client.api';
+import {searchForClientRequest} from '../../api/client.api';
 
+import {Client} from './client.state';
 import ClientState from './client.state';
 import ClientSaga from './client.saga';
 

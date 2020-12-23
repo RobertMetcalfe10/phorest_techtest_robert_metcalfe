@@ -3,9 +3,9 @@ import {connect, useSelector} from 'react-redux';
 import {StackNavigationProp} from '@react-navigation/stack/lib/typescript/src/types';
 import {Input, Card, List, ListItem, Button} from '@ui-kitten/components';
 
-import ClientState, {Client} from 'src/state/client/client.state';
-import {State} from 'src/state/store';
-import {emailIsValid} from 'src/utils/helpers';
+import ClientState, {Client} from '../state/client/client.state';
+import {State} from '../state/store';
+import {emailIsValid} from '../utils/helpers';
 
 interface Props {
   searchForClient: (email: string) => void;
